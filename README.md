@@ -5,3 +5,18 @@ g++ -std=c++11 .\CoordMatrix.cpp .\Tour.cpp  .\TSPalgorithm.cpp .\main.cpp -o ma
 
 ./main.exe
 
+Tour.cpp: construct tour <vector>, function: CreateRandomTour(), CreateNearestNeighbourTour(), TourDistance(),....
+
+CoordMatrix.cpp: Read text/tsp file data, calculates distances and generates DistanceMatrix.
+
+TSPalgorithm.cpp: main algorithm : Two-opt (available), swap, path-relink, sTSP, mTSP.
+
+main.cpp: 
+// Test single TSP
+    test.RunSingleTSP();
+    // Test mTSP
+   test.MultiTSP();
+
+
+
+
