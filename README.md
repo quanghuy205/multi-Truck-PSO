@@ -12,10 +12,15 @@ CoordMatrix.cpp: Read text/tsp file data, calculates distances and generates Dis
 TSPalgorithm.cpp: main algorithm : Two-opt (available), swap, path-relink, sTSP, mTSP.
 
 main.cpp: 
+
+
 // Test single TSP
-    test.RunSingleTSP();
-    // Test mTSP
-   test.MultiTSP();
+
+test.RunSingleTSP();
+
+// Test mTSP
+
+test.MultiTSP();
 
 
 
