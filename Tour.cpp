@@ -98,10 +98,16 @@ void Tour::SetMatrix( CoordMatrix* mat )
 }
 
 
-// Reset existing tour data
+// Reset existing tour data*
 void Tour::Reset()
 {
 	std::vector< int >().swap( cities );
+}
+
+// Reset existing tour data
+void Tour::Reset1(Tour* tour1)
+{
+	std::vector< int >().swap( tour1->cities );
 }
 
 // Return the number of cities in the tour
@@ -116,7 +122,11 @@ int Tour::GetCity( const int& index )
 	int node = cities.at( index );
 	return node;
 }
-
+int Tour::GetCity1( const int& index, Tour *tour1)
+{
+	int node = tour1->cities.at( index );
+	return node;
+}
 
 // Get tour from the set of nearest neighbours
 void Tour::CreateNearestNeighbourTour()
@@ -182,4 +192,8 @@ void Tour::SetCities( const std::vector<int>& v )
 void Tour::SetCity( const int& index, const int& value )
 {
 	cities[ index ] = value;
+}
+void Tour::SetCity1( const int& index, const int& value, Tour* tour1 )
+{
+	tour1->cities[ index ] = value;
 }

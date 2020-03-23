@@ -2,20 +2,23 @@
 #include "CoordMatrix.h"
 #include "Tour.h"
 #include "TSPalgorithm.h"
+
 using namespace std;
 int main() {
 
-    CoordMatrix matrix;
+    //CoordMatrix matrix;
     TSPalgorithm test;
     // readTSP file
-    matrix.Initialize("att48.tsp");
+  //  matrix.Initialize("att48.tsp");
     
-    cout << "Problem name: "<<  matrix.GetFileTitle();
+    //cout << "Problem name: "<<  matrix.GetFileTitle() << endl;
     // Initialize algorithm
-    test.Initialize(&matrix);
+  //  test.Initialize(&matrix);
 
     // Test single TSP
-    //test.RunSingleTSP();
+ //  test.RunSingleTSP();
     // Test mTSP
-    test.MultiTSP();
+   // cout << matrix.distMatrix(0,1);
+   test.MultiTSP();
+    
 }

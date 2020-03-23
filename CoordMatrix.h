@@ -33,8 +33,17 @@ public:
 	int GetMinY() const;
 	int GetMaxX() const;
 	int GetMaxY() const;
-	std::string GetFileTitle() const;
 
+	
+	std::string GetFileTitle() const;
+		std::vector< std::pair<int, int> > coords;
+	std::map< std::pair<int,int>, double > distMatrix;
+	std::string title;
+	int minx;
+	int miny;
+	int maxx;
+	int maxy;
+	int edge_weight_type;
 private:
 	void tokenize( std::vector<std::string>& tokens,  
 				   const std::string& text,  
@@ -43,14 +52,7 @@ private:
 	void SetDistanceMatrix();
 	void Reset();
 
-private:
-	std::vector< std::pair<int, int> > coords;
-	std::map< std::pair<int,int>, double > distMatrix;
-	std::string title;
-	int minx;
-	int miny;
-	int maxx;
-	int maxy;
-	int edge_weight_type;
+
+
 };
 

@@ -1,0 +1,6 @@
+MaxIteration = 2000;
+NumberOfParticles = 50;
+
+Test case       NumOfSalesMan 	RandTourDistance   ImprovedTour
+att48.tsp	2
+		3		21942		    
