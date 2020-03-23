@@ -9,7 +9,7 @@ Tour.cpp: construct tour <vector>, function: CreateRandomTour(), CreateNearestNe
 
 CoordMatrix.cpp: Read text/tsp file data, calculates distances and generates DistanceMatrix.
 
-TSPalgorithm.cpp: main algorithm : Two-opt (available), swap, path-relink, sTSP, mTSP.
+TSPalgorithm.cpp: main algorithm : Two-opt , swap, path-relink, sTSP, mTSP. ( all available)
 
 main.cpp: 
 
