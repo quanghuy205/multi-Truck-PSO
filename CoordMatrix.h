@@ -12,7 +12,8 @@ class CoordMatrix
 public:
 	enum EDGE_WEIGHT_TYPE
 	{
-		ATT = 0
+		ATT = 0,
+		EUC_2D = 1
 	};
 
 	CoordMatrix(void);

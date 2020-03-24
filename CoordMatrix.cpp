@@ -67,10 +67,11 @@ void CoordMatrix::Initialize( std::string filepath )
 		std::vector<std::string> tokens;
 		std::string text( buf );		
 		tokenize( tokens, text, " " );
-
+	//	cout << tokens.at(0);
 		// Read file title
 		if ( tokens.at( 0 ) == "NAME" )
-		{
+		{	
+			
 			title = tokens.at( 2 );
 		}
 
@@ -80,7 +81,12 @@ void CoordMatrix::Initialize( std::string filepath )
 			if ( tokens.at( 2 ) == "ATT" )
 			{
 				edge_weight_type = ATT;
-			}
+			} 
+			if ( tokens.at( 2 ) == "EUC_2D" )
+			{
+				edge_weight_type = EUC_2D;
+			} 
+			
 		}
   
 		if ( line < 7 || 
@@ -240,11 +246,13 @@ void CoordMatrix::SetDistanceMatrix()
 			if ( edge_weight_type == ATT )
 			{
 				dist = CalcPseudoEuclidDistance( x1, x2, y1, y2 );
+				cout << dist << " ";
 			}
 			else
 			{
 				dist = (double) sqrt( (double) ( x1 - x2 ) * ( x1 - x2 ) +  
 				                      (double) ( y1 - y2 ) * ( y1 - y2 ) );
+				
 			}
 
 			// Map the distance to node pair

@@ -1,6 +1,11 @@
-MaxIteration = 2000;
+MaxIteration = 100;
 NumberOfParticles = 50;
 
-Test case       NumOfSalesMan 	RandTourDistance   ImprovedTour
-att48.tsp	2
-		3		21942		    
+Test case    edge_type   	NumOfSalesMan 	RandTourDistance   ImprovedTour	   
+att48.tsp	ATT		2		43945		   13719           
+				3		44360		   18347
+				4		45262 		   22151
+berlin52.tsp    EUC_2D		2		26366              10086		
+				3		27279		   12283
+				4		25883		   13553
+pr76.tsp

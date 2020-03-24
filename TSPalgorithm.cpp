@@ -400,7 +400,7 @@ void TSPalgorithm::MultiTSP()
 	CoordMatrix matrix;
     
     // readTSP file
-    matrix.Initialize("att48.tsp");
+    matrix.Initialize("pr76.tsp");
     
    std::cout << "Problem name: "<<  matrix.GetFileTitle() << std::endl;
     // Initialize algorithm
@@ -416,9 +416,8 @@ void TSPalgorithm::MultiTSP()
 	int UpperLimit = (int) ((tour_size - 1 + NumberOfSalesman)/NumberOfSalesman) + 1;
 
 //	std::cout << UpperLimit;
-	
 
-//	std::vector <int> temp(1,0);
+	//std::vector <int> temp(1,0);
 
 //Initialize popuplation and number of visited cities each salesman
 	A.AllSolution.resize(NumberOfParticles);
@@ -428,8 +427,7 @@ void TSPalgorithm::MultiTSP()
 	}
 	SetupMatrix(&matrix);
 	
-
-
+	
 	
 // create random solutions
 	
@@ -440,6 +438,7 @@ void TSPalgorithm::MultiTSP()
 	{	
 		index = 1;	
 		temp.clear();
+		random_shuffle(tour.cities.begin()+1, tour.cities.end());
 		for (int j = 0; j < NumberOfSalesman; j++) 
 		{
 			if (j == NumberOfSalesman - 1) {
@@ -486,7 +485,7 @@ void TSPalgorithm::MultiTSP()
 	for (int i = 0; i < MaxIteration; i++)
 	{	
 		UpdateBest();
-		cout << i << endl;
+		cout << i << " " <<A.gBest << endl;
 		for (int t = 0; t < NumberOfParticles; t++) 
 		{
 	

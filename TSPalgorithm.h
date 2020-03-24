@@ -28,7 +28,7 @@ class TSPalgorithm
 public:
 	const int NumberOfParticles = 50;
 	const int NumberOfSalesman  = 2;
-	const int MaxIteration   = 2000;
+	const int MaxIteration   = 100;
 
 	TSPalgorithm(void);
 	~TSPalgorithm(void);
