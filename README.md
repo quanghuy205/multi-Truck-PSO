@@ -22,6 +22,6 @@ test.RunSingleTSP();
 
 test.MultiTSP();
 
-
+Chỉnh tham số trong file TSPalgorithm.h, set file input trong TSPalgorithm.cpp::MultiTSP
 
 
