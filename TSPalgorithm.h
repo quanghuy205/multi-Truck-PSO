@@ -26,6 +26,7 @@ class Particle
 class TSPalgorithm
 {
 public:
+	CoordMatrix matrix;
 	const int NumberOfParticles = 50;
 	const int NumberOfSalesman  = 2;
 	const int MaxIteration   = 100;
@@ -43,7 +44,7 @@ public:
 	void PathRelinkOperator(const int& t);
 	void RunSingleTSP();	
 	int GetTourCity( const int& index );
-
+	void CreateSolution();
 	void InitBestValue (CoordMatrix* mat);
 	void MultiTSP(); 
 	int CalculatepBest();

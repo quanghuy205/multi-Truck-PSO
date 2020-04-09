@@ -393,12 +393,9 @@ void TSPalgorithm::PathRelinkOperator(const int& t)
     
 }
 
-
-void TSPalgorithm::MultiTSP()
-{	
-	
-	CoordMatrix matrix;
-    
+void TSPalgorithm::CreateSolution()
+{
+	   
     // readTSP file
     matrix.Initialize("pr76.tsp");
     
@@ -459,30 +456,24 @@ void TSPalgorithm::MultiTSP()
 	InitBestValue(&matrix);
 	
 
-		int tempdis = A.gBestSolution.at(0).TourDistance();
-	cout << endl;
-	 for (int j = 0; j < NumberOfSalesman; j++)
-		{	
-			
-			cout << "Salesman " << j << ": ";
-			for (int k = 0; k < A.gBestSolution.at(j).cities.size(); k++)
-			{	
-				
-				std::cout << " " << A.gBestSolution.at(j).cities.at(k) << " ";
-			}
-			if (j != 0)
-			{
-				tempdis = tempdis +  A.gBestSolution.at(j).TourDistance();
-			}
-				
-			std::cout << std::endl << "Tour Distance: " << A.gBestSolution.at(j).TourDistance() << std::endl;
-		} 
-		cout << "Total tour length: " << tempdis << endl;
+	
+}
+void TSPalgorithm::MultiTSP()
+{	
+	std::vector <double> Result;	
+	double Best;
+	double Worst;
+	double Mean;
+ 
 
 	//main algorithm
 
-	
-	for (int i = 0; i < MaxIteration; i++)
+	for (int step = 0; step < 20; step ++)
+	{	
+
+		CreateSolution();
+		cout << "Runtime " << step << endl; 
+		for (int i = 0; i < MaxIteration; i++)
 	{	
 		UpdateBest();
 		cout << i << " " <<A.gBest << endl;
@@ -520,27 +511,35 @@ void TSPalgorithm::MultiTSP()
 	cout <<endl <<  "Tour after mTSP: "	<< endl;
 	
 
-	tempdis = A.gBestSolution.at(0).TourDistance();
-	cout << endl;
-	 for (int j = 0; j < NumberOfSalesman; j++)
-		{	
-			
-			cout << "Salesman " << j << ": ";
-			for (int k = 0; k < A.gBestSolution.at(j).cities.size(); k++)
-			{	
-				
-				std::cout << " " << A.gBestSolution.at(j).cities.at(k) << " ";
-			}
-			if (j != 0)
-			{
-				tempdis = tempdis +  A.gBestSolution.at(j).TourDistance();
-			}
-				
-			std::cout << std::endl << "Tour Distance: " << A.gBestSolution.at(j).TourDistance() << std::endl;
-		} 
-		cout << "Total tour length: " << tempdis;
+	cout << "Total tour length: "  << A.gBest;
+	Result.push_back(A.gBest);
 
-	
+	}
+	cout << endl;
+	for (int i = 0; i < Result.size(); i++)
+	{ 
+		cout << Result.at(i) << " ";
+	}
+	double sum = Result.at(0);
+	Worst = Result.at(0);
+	Best = Result.at(0);
+
+	for (int i = 1; i < Result.size(); i++) 
+	{
+		sum += Result.at(i);
+		if (Worst < Result.at(i)) 
+		{
+			Worst = Result.at(i);
+		}
+		if (Best > Result.at(i))
+		{
+			Best = Result.at(i);
+		}
+	}
+	Mean = sum/Result.size();
+	cout << endl;
+	cout << "Worst: " << Worst << "Best: " << Best << "Mean: " << Mean;
+
 }
 	
 		
